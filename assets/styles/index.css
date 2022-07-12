@@ -1,0 +1,2315 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: poppins;
+}
+
+body a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+body .modal {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 99999;
+  display: none;
+  opacity: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body .modal .modal-content {
+  width: 30%;
+  min-width: 350px;
+  background: white;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+body .modal .modal-content .chat-close-confirm {
+  width: 100%;
+  height: auto;
+}
+
+body .modal .modal-content .chat-close-confirm p {
+  text-align: center;
+}
+
+body .modal .modal-content .chat-close-confirm .confirm-button {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .modal .modal-content .chat-close-confirm .confirm-button button {
+  padding: 7px 15px;
+  border-radius: 20px;
+}
+
+body .modal .modal-content .chat-close-confirm .confirm-button button:not(:first-child) {
+  margin-left: 10px;
+}
+
+body #main-body {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+
+body #main-body header {
+  padding: 0px 5vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99;
+}
+
+body #main-body header .game-search {
+  z-index: 999;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: auto;
+  min-width: 300px;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  display: none;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body #main-body header .game-search .game-search-form {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 30%;
+  height: 32px;
+  min-width: 350px;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+body #main-body header .game-search .game-search-form form {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body #main-body header .game-search .game-search-form form .game-inputs {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #main-body header .game-search .game-search-form form .game-inputs input {
+  width: 90%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+body #main-body header .game-search .game-search-form form .game-inputs button {
+  min-width: 40px;
+  width: 10%;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+body #main-body header .game-search .game-search-form .search-dropdown {
+  width: 94%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  top: 35px;
+  border-radius: 5px;
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+  height: 0px;
+  overflow: hidden;
+}
+
+body #main-body header .game-search .game-search-form .search-dropdown ul {
+  width: 100%;
+  list-style: none;
+}
+
+body #main-body header .game-search .game-search-form .search-dropdown ul li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+body #main-body header .game-search .game-search-form .search-dropdown ul li:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body #main-body header .logo {
+  font-size: 1.3rem;
+  font-family: aldrich;
+}
+
+body #main-body header .links {
+  width: auto;
+  height: 30px;
+}
+
+body #main-body header .links ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #main-body header .links ul li a {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+body #main-body header .links ul li:not(:first-child) {
+  margin-left: 20px;
+}
+
+body #main-body .body-content {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg) rotateX(0deg);
+          transform: rotateY(0deg) rotateX(0deg);
+  left: 0;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body #main-body .body-content .cubic-body .cubic-side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  padding: 0px 5vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 99;
+  display: none;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 1.2s ease all;
+  transition: 1.2s ease all;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .modal-spinner {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  font-size: 1.5rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .content-modal-contents {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal #cancel-content-modal-btn {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-size: 1.5rem;
+  background: transparent;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal #back-content-modal-btn {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 1.5rem;
+  background: transparent;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .game-category-header {
+  width: 100%;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .game-category-header h2 {
+  font-size: 1rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .game-category-content {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .game-category-content .game-cat-cont {
+  min-width: 220px;
+  max-width: 220px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play .how-to-play-contents {
+  width: 50%;
+  min-width: 300px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play .how-to-play-contents .how-to-play-header {
+  text-align: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play .how-to-play-contents .how-to-play-header h2 {
+  font-size: 1rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play .how-to-play-contents .how-to-play-instructions {
+  width: 80%;
+  min-width: 280px;
+  height: 300px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play .how-to-play-contents .how-to-play-instructions .instructions {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  padding: 0px 20px;
+  text-align: justify;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play .how-to-play-contents .how-to-play-instructions .instructions:not(:first-child) {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play .how-to-play-contents .how-to-play-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  min-width: 280px;
+  margin-top: 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play .how-to-play-contents .how-to-play-buttons button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play .how-to-play-contents .how-to-play-image {
+  width: 100%;
+  height: 100%;
+  background: grey;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .how-to-play .how-to-play-contents .how-to-play-image img {
+  max-width: 100%;
+  min-height: 100%;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content {
+  width: 100%;
+  height: 100%;
+  border: 1px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content .help-page-modal-header {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content .help-page-modal-header h2 {
+  font-size: 1rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content .help-page-modal-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  height: calc(100% - 40px);
+  min-height: 350px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content .hep-page-modal-description {
+  height: 250px;
+  width: 80%;
+  min-width: 280px;
+  text-align: justify;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content .hep-page-modal-description .description {
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content .hep-page-modal-description .description:not(:first-child) {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content .help-page-modal-button {
+  width: 80%;
+  min-width: 280px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content .help-page-modal-button button {
+  padding: 5px 10px;
+  border-radius: 20px;
+  outline: none;
+  font-size: 0.96rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content video {
+  height: 100%;
+  width: 100%;
+  background: grey;
+}
+
+body #main-body .body-content .cubic-body .cubic-side #help-modal .content-modal-contents {
+  height: 100%;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .banner-contents {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .banner-contents .banner-text {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .banner-contents .banner-text .banner-title {
+  text-transform: uppercase;
+  font-family: artifika;
+  font-size: 1.3rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .banner-contents .banner-text .banner-cta {
+  margin-top: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .banner-contents .banner-text .banner-cta button {
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .banner-contents .banner-text .banner-cta button a {
+  font-size: 1.1rem;
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .banner-contents .banner-images {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container {
+  width: 30%;
+  min-width: 450px;
+  min-height: 200px;
+  height: auto;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-image {
+  width: 50%;
+  height: 100%;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: auto;
+  margin-top: 20px;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-buttons .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 75%;
+  border-radius: 20px;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-buttons .buttons button {
+  cursor: pointer;
+  width: 50%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  z-index: 9;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-buttons .buttons #hover-button {
+  position: absolute;
+  background: #d4d4d4;
+  padding: 0;
+  height: 100%;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+  left: 0;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content {
+  width: 75%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .getting-started-from-error {
+  position: fixed;
+  width: auto;
+  padding: 0px 10px;
+  z-index: 9;
+  border-radius: 5px;
+  background: red;
+  display: none;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .getting-started-from-error #pointer-btn {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-top: 6px solid transparent;
+  border-left: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 11px solid red;
+  background: transparent;
+  left: -11.3px;
+  top: -7.3px;
+  -webkit-transform: rotateZ(40deg);
+          transform: rotateZ(40deg);
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .getting-started-from-error p {
+  font-size: 0.7rem;
+  color: white;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form,
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .login-form {
+  width: 100%;
+  min-width: 100%;
+  height: auto;
+  position: relative;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form form,
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .login-form form {
+  margin-top: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form form .form-input,
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .login-form form .form-input {
+  width: 100%;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form form .form-input input, body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form form .form-input label,
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .login-form form .form-input input,
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .login-form form .form-input label {
+  width: 100%;
+  background: transparent;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form form .form-input label,
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .login-form form .form-input label {
+  position: absolute;
+  padding-bottom: 5px;
+  bottom: 0;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+  left: 0px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form form .form-input input,
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .login-form form .form-input input {
+  border: none;
+  border-bottom: 2px solid black;
+  height: 35px;
+  outline: none;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form form .form-input button,
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .login-form form .form-input button {
+  cursor: pointer;
+  width: 100%;
+  height: 35px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form form .form-input:not(:first-child),
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .login-form form .form-input:not(:first-child) {
+  margin-top: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .login-form {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form .sign-up-form-content {
+  position: relative;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form .sign-up-form-content:not(:first-child) {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: absolute;
+  left: 0;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 60px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container {
+  height: calc(100% - 60px);
+  padding: 0px 20px;
+  overflow-y: scroll;
+  width: 100%;
+  position: relative;
+  scrollbar-width: thin;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .scroll-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  -webkit-transform: translate(0%, -80%);
+          transform: translate(0%, -80%);
+  z-index: 99;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container #scroll-left {
+  left: 0px;
+  top: 50%;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container #scroll-right {
+  right: 0px;
+  top: 50%;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .game-scroll-list {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .games {
+  width: 200px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .games .game-image {
+  width: 96%;
+  height: 230px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .games .game-image a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .games .game-image a .game-title {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 1.03rem;
+  font-family: poppinssemibold;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .games .game-image a img {
+  max-height: 100%;
+  min-width: 100%;
+  border: none;
+  outline: none;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .games .game-image a:hover .game-title {
+  -webkit-transform: scale(0) rotateZ(1080deg);
+          transform: scale(0) rotateZ(1080deg);
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .games .game-button {
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .games .game-button button {
+  outline: none;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .top-games {
+  width: 100%;
+  margin-top: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .top-games .top-games-header h2 {
+  font-size: 1rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .top-games .top-games-content {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+  overflow: hidden;
+  padding: 20px 0px;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .top-games .top-games-content .games:not(:last-child) {
+  margin-right: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .game-list-content .games-header h2 {
+  font-size: 1rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .game-list-content .games-content {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0px 10px 0px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .game-list-content .games-content .games {
+  margin-top: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .game-list-content .games-content .games:not(:last-child) {
+  margin-right: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .game-list-content .game-cta {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container .game-list-content .game-cta button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container::-webkit-scrollbar-button {
+  background: black;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container::-webkit-scrollbar-thumb {
+  background: grey;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .game-content .game-list-container::-webkit-scrollbar-track {
+  background: #888787;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container {
+  width: 100%;
+  height: calc(100% - 150px);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .help-links {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .help-links ul li:not(:first-child) {
+  margin-top: 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .help-links .help-link-cta {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .help-links .help-link-cta .cta-text {
+  width: 100%;
+  text-align: center;
+  padding: 0px 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .help-links .help-link-cta .cta-button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .help-links .help-link-cta .cta-button button {
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .help-links .help-link-cta .cta-button button:not(:first-child) {
+  margin-left: 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background: white;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  bottom: -100%;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content #back-button {
+  position: absolute;
+  background: transparent;
+  font-size: 1.5rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-header {
+  width: 100%;
+  text-align: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-header h2 {
+  font-size: 1rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80%;
+  margin-top: 25px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-feedback {
+  width: 47.5%;
+  height: 100%;
+  min-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-feedback form {
+  width: 300px;
+  height: auto;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-feedback form .feedback-input {
+  width: 100%;
+  height: auto;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-feedback form .feedback-input input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 0px 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-feedback form .feedback-input textarea {
+  width: 100%;
+  height: 110px;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-feedback form .feedback-input button {
+  width: 100%;
+  height: 35px;
+  border-radius: 20px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-feedback form .feedback-input:not(:first-child) {
+  margin-top: 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-divisor {
+  width: 5%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-divisor .divisor {
+  width: 3px;
+  height: 40%;
+  background: #bdbdbd;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-divisor .divisor-text {
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-links {
+  width: 47.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-links .other-help-link-content {
+  width: 100%;
+  height: 40%;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-links .other-help-link-content ul {
+  list-style: none;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-links #contact-us-link ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-links #contact-us-link ul li a {
+  font-size: 1.5rem;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-links #contact-us-link ul li:not(:first-child) {
+  margin-left: 10px;
+}
+
+body #main-body .body-content .cubic-body .cubic-side .help-content .help-container .other-help-content .other-help-content-container .other-help-links .other-help-link-content-divisor {
+  width: 100%;
+  height: 3px;
+  background: #bdbdbd;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+body #main-body .body-content .cubic-body #left-side {
+  -webkit-transform: rotateY(-90deg) translateZ(100px) rotateX(0deg);
+          transform: rotateY(-90deg) translateZ(100px) rotateX(0deg);
+}
+
+body #main-body .body-content .cubic-body #right-side {
+  -webkit-transform: rotateY(90deg) translateZ(100px) rotateX(0deg);
+          transform: rotateY(90deg) translateZ(100px) rotateX(0deg);
+}
+
+body #main-body .body-content .cubic-body #bottom-side {
+  -webkit-transform: rotateX(-90deg) translateZ(100px) rotateY(0deg);
+          transform: rotateX(-90deg) translateZ(100px) rotateY(0deg);
+}
+
+body #main-body nav {
+  position: fixed;
+  bottom: 0;
+  width: 500px;
+  height: 60px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-body nav ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+}
+
+body #main-body nav ul li {
+  position: relative;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body #main-body nav ul li button {
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  position: absolute;
+  bottom: -8px;
+  width: 120%;
+  height: auto;
+  min-height: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: transparent;
+  outline: none;
+  border: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  left: -10%;
+}
+
+body #main-body nav ul li button span {
+  background: grey;
+  position: absolute;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+body #main-body nav ul li button .left-hover {
+  left: -100%;
+}
+
+body #main-body nav ul li button .middle-hover {
+  opacity: 0;
+}
+
+body #main-body nav ul li button .right-hover {
+  right: -100%;
+}
+
+body #main-body nav ul li:not([class="active"]):hover span {
+  position: relative;
+  top: 0px;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #main-body nav ul li:not([class="active"]):hover .left-hover {
+  margin-left: 0px;
+  margin-right: 8px;
+  left: 0px;
+}
+
+body #main-body nav ul li:not([class="active"]):hover .middle-hover {
+  opacity: 1;
+  left: 0px;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+body #main-body nav ul li:not([class="active"]):hover .right-hover {
+  margin-right: 0px;
+  right: 0px;
+  margin-left: 8px;
+}
+
+body #main-body nav ul #active {
+  margin-top: -12px;
+}
+
+body #main-body nav ul #active button {
+  bottom: 2px;
+}
+
+body #main-body nav ul #active span {
+  position: relative;
+  top: 0px;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #main-body nav ul #active .left-hover {
+  margin-left: 0px;
+  margin-right: 8px;
+  left: 0px;
+}
+
+body #main-body nav ul #active .middle-hover {
+  opacity: 1;
+  left: 0px;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+
+body #main-body nav ul #active .right-hover {
+  margin-right: 0px;
+  right: 0px;
+  margin-left: 8px;
+}
+
+body #main-body .chat-box {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  background: white;
+  z-index: 99;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  display: none;
+  opacity: 0;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body #main-body .chat-box .chat-box-header {
+  width: 100%;
+  height: 59px;
+  border-bottom: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 20px;
+}
+
+body #main-body .chat-box .chat-box-header .header-title h2 {
+  font-size: 1rem;
+}
+
+body #main-body .chat-box .chat-box-header .header-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #main-body .chat-box .chat-box-header .header-buttons button {
+  background: transparent;
+  font-size: 1.4rem;
+}
+
+body #main-body .chat-box .chat-box-header .header-buttons button:not(:first-child) {
+  margin-left: 10px;
+}
+
+body #main-body .chat-box .chat-box-header .chat-open-button {
+  position: absolute;
+  width: 100%;
+  max-width: 50px;
+  background: white;
+  height: 100%;
+  max-height: 50px;
+  left: 0;
+}
+
+body #main-body .chat-box .chat-box-header .chat-open-button button {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  font-size: 1.5rem;
+}
+
+body #main-body .chat-box .chat-content {
+  width: 100%;
+  height: 330px;
+  padding: 20px;
+}
+
+body #main-body .chat-box .chat-content .chats-messages {
+  width: 100%;
+  height: auto;
+}
+
+body #main-body .chat-box .chat-content .chats-messages .message-content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+}
+
+body #main-body .chat-box .chat-content .chats-messages .message-content .message {
+  width: 75%;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+body #main-body .chat-box .chat-content .chats-messages .message-content .message p#message-text {
+  font-size: 0.7rem;
+}
+
+body #main-body .chat-box .chat-content .chats-messages .message-content .message p#time {
+  font-size: 0.6rem;
+}
+
+body #main-body .chat-box .chat-content .chats-messages .message-content:not(:first-child) {
+  margin-top: 10px;
+}
+
+body #main-body .chat-box .chat-content .chats-messages #sender-text {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body #main-body .chat-box .chat-content .chats-messages .typing-animation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 10px;
+  -webkit-animation: 1.1s elementUp ease infinite;
+          animation: 1.1s elementUp ease infinite;
+}
+
+body #main-body .chat-box .chat-content .chats-messages .typing-animation span {
+  display: block;
+  background: #d4d4d4;
+  width: 10px;
+  min-width: 10px;
+  height: 10px;
+}
+
+body #main-body .chat-box .chat-content .chats-messages .typing-animation span:not(:first-child) {
+  margin-left: 7px;
+}
+
+@-webkit-keyframes elementUp {
+  0% {
+    width: 0px;
+  }
+  33% {
+    width: 10px;
+  }
+  66% {
+    width: 27px;
+  }
+  100% {
+    width: 48px;
+  }
+}
+
+@keyframes elementUp {
+  0% {
+    width: 0px;
+  }
+  33% {
+    width: 10px;
+  }
+  66% {
+    width: 27px;
+  }
+  100% {
+    width: 48px;
+  }
+}
+
+body #main-body .chat-box .chat-form {
+  width: 100%;
+  height: 59px;
+  border-top: 1px solid black;
+}
+
+body #main-body .chat-box .chat-form form {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-body .chat-box .chat-form form .chat-input {
+  width: 80%;
+  height: 35px;
+  min-width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+body #main-body .chat-box .chat-form form .chat-input textarea {
+  width: 85%;
+  height: 100%;
+  background: transparent;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+body #main-body .chat-box .chat-form form .chat-input button {
+  width: 15%;
+  min-width: 30px;
+  background: transparent;
+}
+
+body #main-body #theme-button {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  padding: 7px 20px 7px 10px;
+  font-size: 1.5rem;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  z-index: 999;
+}
+
+body #main-body .theme-settings {
+  position: fixed;
+  display: inline-block;
+  width: 90px;
+  height: auto;
+  padding: 20px;
+  background: white;
+  right: -80px;
+  top: 80px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+body #main-body .theme-settings #close-theme-button {
+  position: absolute;
+  left: 20px;
+  top: 5px;
+  font-size: 1.2rem;
+  background: transparent;
+}
+
+body #main-body .theme-settings .theme-box {
+  width: 100%;
+  height: 40px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+body #main-body .theme-settings #default-theme {
+  background: linear-gradient(150deg, #f6f6f6 40%, #c4c9c9, #adafaf);
+}
+
+body #main-body .theme-settings #dark-theme {
+  background: linear-gradient(-50deg, #02082c 40%, #1f2134, #010310);
+}
+
+body #main-body .theme-settings .theme-box:not(:first-child) {
+  margin-top: 10px;
+}
+
+#dark {
+  color: white;
+  background: linear-gradient(-50deg, #02082c 40%, #1f2134, #010310);
+}
+
+#dark .content-modal {
+  background: #03045e !important;
+}
+
+#dark .content-modal .modal-spinner {
+  color: white !important;
+  background: #03045e;
+}
+
+#dark .content-modal #back-content-modal-btn,
+#dark .content-modal #cancel-content-modal-btn {
+  color: white;
+}
+
+#dark .content-modal .how-to-play .how-to-play-header {
+  color: white;
+}
+
+#dark .content-modal .how-to-play .how-to-play-instructions .instructions {
+  color: white;
+}
+
+#dark .content-modal .how-to-play .how-to-play-buttons button {
+  background: white !important;
+  color: #2f43a8 !important;
+}
+
+#dark .content-modal .help-page-modal-content .help-page-modal-header h2 {
+  color: white;
+}
+
+#dark .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content .hep-page-modal-description .description {
+  color: white;
+}
+
+#dark .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content .help-page-modal-button button {
+  background: white;
+  color: #2f43a8;
+}
+
+#dark .modal .modal-content {
+  background: #03045e !important;
+}
+
+#dark .modal .chat-close-confirm .confirm-button button {
+  color: #2f43a8;
+  background: white;
+}
+
+#dark header {
+  color: white;
+}
+
+#dark header .game-search .game-search-form {
+  border: none !important;
+}
+
+#dark header .game-search .game-search-form .game-inputs button {
+  color: #2f43a8;
+}
+
+#dark header .game-search .game-search-form .search-dropdown {
+  background: #03045e !important;
+}
+
+#dark header .game-search .game-search-form .search-dropdown ul li:hover {
+  background: #010227;
+}
+
+#dark .banner-contents .banner-text .banner-cta button {
+  background: white;
+  color: #2f43a8;
+}
+
+#dark .getting-started .getting-started-container {
+  background: #03045e;
+  color: white;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+#dark .getting-started .getting-started-container .getting-started-form .getting-started-form-buttons .buttons {
+  border: 1px solid #d6d4d4;
+}
+
+#dark .getting-started .getting-started-container .getting-started-form .getting-started-form-buttons .buttons #hover-button {
+  background: white !important;
+}
+
+#dark .getting-started .getting-started-container .getting-started-form .getting-started-form-buttons .buttons button {
+  color: white;
+}
+
+#dark .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .form-input label {
+  color: #e7e7e7;
+}
+
+#dark .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .form-input input {
+  color: #dfdfdf;
+  border-bottom: 1px solid white !important;
+}
+
+#dark .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .form-input button {
+  background: white;
+  color: #03045e;
+}
+
+#dark .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form-content {
+  background: #03045e !important;
+}
+
+#dark .game-content .game-list-container {
+  scrollbar-color: white #c4c4c4 !important;
+  scrollbar-arrow-color: #1f1f1f !important;
+}
+
+#dark .game-content .game-list-container .scroll-button {
+  background: white;
+  color: #2f43a8;
+}
+
+#dark .game-content .game-list-container .games .game-image a .game-title {
+  background: rgba(21, 29, 87, 0.5) !important;
+  color: white !important;
+}
+
+#dark .game-content .game-list-container .games .game-button button {
+  background: white;
+  color: #2f43a8;
+}
+
+#dark .game-content .game-list-container .game-cta button {
+  color: #2f43a8;
+  background: white;
+}
+
+#dark .game-content .game-list-container::-webkit-scrollbar-button {
+  background: #1f1f1f !important;
+}
+
+#dark .game-content .game-list-container::-webkit-scrollbar-thumb {
+  background: white !important;
+  border-radius: 10px;
+}
+
+#dark .game-content .game-list-container::-webkit-scrollbar-track {
+  background: 196, 196, 196 !important;
+  opacity: 0.2;
+}
+
+#dark .help-content .help-container {
+  background: #03045e;
+}
+
+#dark .help-content .help-container .help-links ul {
+  color: white;
+}
+
+#dark .help-content .help-container .help-links ul li a {
+  color: white;
+}
+
+#dark .help-content .help-container .help-links .help-link-cta .cta-button button {
+  color: #03045e;
+  background: white;
+}
+
+#dark .help-content .help-container .other-help-content {
+  background: #03045e !important;
+}
+
+#dark .help-content .help-container .other-help-content #back-button {
+  color: white;
+}
+
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input textarea::-webkit-input-placeholder,
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input input::-webkit-input-placeholder {
+  color: #e9e8e8;
+  font-size: 0.9rem;
+  font-family: poppins;
+}
+
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input textarea:-ms-input-placeholder,
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input input:-ms-input-placeholder {
+  color: #e9e8e8;
+  font-size: 0.9rem;
+  font-family: poppins;
+}
+
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input textarea::-ms-input-placeholder,
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input input::-ms-input-placeholder {
+  color: #e9e8e8;
+  font-size: 0.9rem;
+  font-family: poppins;
+}
+
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input textarea::placeholder,
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input input::placeholder {
+  color: #e9e8e8;
+  font-size: 0.9rem;
+  font-family: poppins;
+}
+
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input input,
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input textarea {
+  border: 1px solid #e4e4e4 !important;
+  background: transparent;
+}
+
+#dark .help-content .help-container .other-help-content .other-help-feedback .feedback-input button {
+  color: #2f43a8;
+  background: white;
+}
+
+#dark .help-content .help-container .other-help-content .other-help-links ul li a {
+  color: white;
+}
+
+#dark nav {
+  background: #03045e;
+}
+
+#dark nav ul li a {
+  color: white;
+}
+
+#dark nav ul li button #link-hover {
+  background: white;
+}
+
+#dark .chat-box {
+  background: #03045e !important;
+}
+
+#dark .chat-box .chat-box-header {
+  border-bottom: 1px solid #cfcfcf !important;
+}
+
+#dark .chat-box .chat-box-header .chat-open-button {
+  background: #03045e !important;
+}
+
+#dark .chat-box .chat-box-header .chat-open-button button {
+  color: white;
+}
+
+#dark .chat-box .chat-box-header .header-buttons button {
+  color: white;
+}
+
+#dark .chat-box .chat-content .chats-messages .message-content .message {
+  background: white;
+  color: #2f43a8;
+}
+
+#dark .chat-box .chat-content .chats-messages .typing-animation span {
+  background: white !important;
+}
+
+#dark .chat-box .chat-form {
+  border-top: 1px solid #e0e0e0 !important;
+}
+
+#dark .chat-box .chat-form .chat-input {
+  border: 1px solid #e9e8e8 !important;
+}
+
+#dark .chat-box .chat-form .chat-input button {
+  background: #6c6dbb !important;
+  color: white;
+}
+
+#dark #theme-button {
+  background: #03045e;
+  color: white;
+}
+
+#dark .theme-settings {
+  background: #03045e !important;
+}
+
+#dark .theme-settings #close-theme-button {
+  color: white;
+}
+
+#default {
+  background: linear-gradient(150deg, #f6f6f6 40%, #c4c9c9, #adafaf);
+}
+
+#default .content-modal {
+  background: white;
+}
+
+#default .content-modal .modal-spinner {
+  color: black;
+  background: white;
+}
+
+#default .content-modal #back-content-modal-btn,
+#default .content-modal #cancel-content-modal-btn {
+  color: #03045e;
+}
+
+#default .content-modal .how-to-play .how-to-play-header {
+  color: black;
+}
+
+#default .content-modal .how-to-play .how-to-play-instructions .instructions {
+  color: black;
+}
+
+#default .content-modal .how-to-play .how-to-play-buttons button {
+  background: #03045e !important;
+  color: white;
+}
+
+#default .content-modal .help-page-modal-content .help-page-modal-header h2 {
+  color: black;
+}
+
+#default .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content .hep-page-modal-description .description {
+  color: black;
+}
+
+#default .content-modal .help-page-modal-content .help-page-modal-details .help-page-modal-details-content .help-page-modal-button button {
+  background: #03045e;
+  color: white;
+}
+
+#default .modal .chat-close-confirm .confirm-button button {
+  color: white;
+  background: #03045e;
+}
+
+#default header {
+  color: #03045e;
+}
+
+#default header .game-search .game-search-form {
+  border: none !important;
+}
+
+#default header .game-search .game-search-form .game-inputs button {
+  color: #03045e;
+}
+
+#default header .game-search .game-search-form .search-dropdown {
+  background: white !important;
+}
+
+#default header .game-search .game-search-form .search-dropdown ul li a {
+  color: #03045e !important;
+}
+
+#default .banner-contents .banner-text .banner-cta button {
+  background: #03045e;
+  color: white;
+}
+
+#default .getting-started .getting-started-container {
+  background: white;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+#default .getting-started .getting-started-container .getting-started-form .getting-started-form-buttons .buttons {
+  border: 1px solid #707070;
+}
+
+#default .getting-started .getting-started-container .getting-started-form .getting-started-form-buttons .buttons #hover-button {
+  background: #03045e !important;
+}
+
+#default .getting-started .getting-started-container .getting-started-form .getting-started-form-buttons .buttons button {
+  color: #03045e;
+}
+
+#default .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .form-input label {
+  color: #8b8a8a;
+}
+
+#default .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .form-input input {
+  color: #1f1f1f;
+  border-bottom: 1px solid #02033b !important;
+}
+
+#default .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .form-input button {
+  background: #03045e;
+  color: white;
+}
+
+#default .getting-started .getting-started-container .getting-started-form .getting-started-form-contents .form-content .sign-up-form-content {
+  background: white !important;
+}
+
+#default .game-content .game-list-container {
+  scrollbar-color: #03045e #72729e !important;
+  scrollbar-arrow-color: #1f1f1f !important;
+}
+
+#default .game-content .game-list-container .scroll-button {
+  background: #03045e;
+  color: white;
+}
+
+#default .game-content .game-list-container .games .game-image a .game-title {
+  background: rgba(0, 0, 0, 0.4) !important;
+  color: white !important;
+}
+
+#default .game-content .game-list-container .games .game-button button {
+  background: #03045e;
+  color: white;
+}
+
+#default .game-content .game-list-container .game-cta button {
+  color: white;
+  background: #03045e;
+}
+
+#default .game-content .game-list-container::-webkit-scrollbar-button {
+  background: #1f1f1f !important;
+}
+
+#default .game-content .game-list-container::-webkit-scrollbar-thumb {
+  background: #03045e !important;
+  border-radius: 10px;
+}
+
+#default .game-content .game-list-container::-webkit-scrollbar-track {
+  background: #72729e !important;
+  opacity: 0.2;
+}
+
+#default .help-content .help-container {
+  background: white;
+}
+
+#default .help-content .help-container .help-links ul {
+  color: #02023e;
+}
+
+#default .help-content .help-container .help-links ul li a {
+  color: #02023e;
+}
+
+#default .help-content .help-container .help-links .help-link-cta .cta-button button {
+  color: white;
+  background: #03045e;
+}
+
+#default .help-content .help-container .other-help-content #back-button {
+  color: #03045e;
+}
+
+#default .help-content .help-container .other-help-content .other-help-feedback .feedback-input textarea::-webkit-input-placeholder,
+#default .help-content .help-container .other-help-content .other-help-feedback .feedback-input input::-webkit-input-placeholder {
+  color: #707070;
+  font-size: 0.9rem;
+  font-family: poppins;
+}
+
+#default .help-content .help-container .other-help-content .other-help-feedback .feedback-input textarea:-ms-input-placeholder,
+#default .help-content .help-container .other-help-content .other-help-feedback .feedback-input input:-ms-input-placeholder {
+  color: #707070;
+  font-size: 0.9rem;
+  font-family: poppins;
+}
+
+#default .help-content .help-container .other-help-content .other-help-feedback .feedback-input textarea::-ms-input-placeholder,
+#default .help-content .help-container .other-help-content .other-help-feedback .feedback-input input::-ms-input-placeholder {
+  color: #707070;
+  font-size: 0.9rem;
+  font-family: poppins;
+}
+
+#default .help-content .help-container .other-help-content .other-help-feedback .feedback-input textarea::placeholder,
+#default .help-content .help-container .other-help-content .other-help-feedback .feedback-input input::placeholder {
+  color: #707070;
+  font-size: 0.9rem;
+  font-family: poppins;
+}
+
+#default .help-content .help-container .other-help-content .other-help-feedback .feedback-input button {
+  color: white;
+  background: #03045e;
+}
+
+#default .help-content .help-container .other-help-content .other-help-links ul li a {
+  color: #02023e;
+}
+
+#default nav {
+  background: #03045e;
+}
+
+#default nav ul li a {
+  color: white;
+}
+
+#default nav ul li button #link-hover {
+  background: white;
+}
+
+#default .chat-box .chat-box-header .chat-open-button button {
+  color: #03045e;
+}
+
+#default .chat-box .chat-box-header .header-buttons button {
+  color: #03045e;
+}
+
+#default .chat-box .chat-content .chats-messages .message-content .message {
+  background: #03045e;
+  color: white;
+}
+
+#default .chat-box .chat-content .chats-messages .typing-animation span {
+  background: #03045e !important;
+}
+
+#default .chat-box .chat-form .chat-input {
+  border: 1px solid #2f3053 !important;
+}
+
+#default .chat-box .chat-form .chat-input button {
+  background: #6c6dbb !important;
+  color: white;
+}
+
+#default #theme-button {
+  background: #03045e;
+  color: white;
+}
+
+#default .theme-settings {
+  background: #03045e !important;
+}
+
+#default .theme-settings #close-theme-button {
+  color: white;
+}
+/*# sourceMappingURL=index.css.map */
